@@ -1,0 +1,56 @@
+<h1 class="col-md-12">Eat Da Burger!</h1>
+
+<h4 class="col-md-12">Burger For You!</h2>
+
+  <ul class="col-md-6">
+    {{#each burgers}}
+    {{#unless devoured}}
+    <li>
+      <p>
+        {{this.id}}. {{this.burger_name}}
+        <button data-devouredid="{{this.id}}" class="devoured btn">Devoured...!</button>
+        {{!-- <button data-devouredid="{{this.id}}" class="devoured btn">Update...!</button> --}}
+        <button class="btn">
+          <a href="/{{this.id}}">Update this burger</a>
+        </button>
+      </p>
+    </li>
+    {{/unless}}
+    {{/each}}
+  </ul>
+
+  <ul class="col-md-6">
+    {{#each burgers}}
+    {{#if devoured}}
+    <li>
+      <p>
+        {{this.id}}. {{this.burger_name}}
+        <button data-deleteid="{{this.id}}" class="delete btn">Delete...!</button>
+
+      </p>
+    </li>
+    {{/if}}
+    {{/each}}
+  </ul>
+
+  <form class="create-form col-md-6">
+    <h2>Add a Burger</h2>
+    <div class="form-group">
+      <label for="burgername">Burger Name:</label>
+      <input type="text" id="burgername" name="burgername">
+    </div>
+    <button type="submit">Add Your Burger</button>
+    <p>Enter a burger you want to eat Click the 'Submit' button</p>
+  </form>
+
+  <form class="select-form col-md-6">
+    <h2>Select a burgers</h2>
+    <div class="form-group">
+      <select name="id">
+        {{#each burgers}}
+        <option data-id="{{this.id}}" data-name="{{this.burger_name}}">{{this.burger_name}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <button type="submit">Add this Burger!</button>
+  </form>

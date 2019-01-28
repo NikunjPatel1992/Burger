@@ -1,0 +1,23 @@
+
+.container-fluid{
+    background-color: aqua;
+    height: 100%;
+}
+.container{
+    background-color: orange;
+    height: 100vh;
+}
+.btn{
+    margin-left: 20px;
+    margin-bottom: 2px;
+    
+}
+li{
+    background-color: white;
+    /* padding-bottom: 1px; */
+    padding-top: 5px;
+    
+}
+img{
+    margin-top: 20px;
+}

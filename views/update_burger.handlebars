@@ -1,0 +1,18 @@
+<h1 class="col-md-12">Update Your Burger</h1>
+
+<div class="updateburger col-md-12">
+{{#each burgers}}
+{{#if this.id}}
+<form data-id="{{this.id}}" class="update-form">
+    
+    <div class="form-group">
+        <label for="burger">Add Burger Name:</label>
+        <input type="text" id="burger" name="burger" value="{{this.burger_name}}">
+    </div>
+    <button class="btn" type="submit">Update Your Burger</button>
+</form>
+
+{{/if}}
+{{/each}}
+
+</div>
