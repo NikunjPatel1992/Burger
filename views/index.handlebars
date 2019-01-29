@@ -46,9 +46,9 @@
   <form class="select-form col-md-6">
     <h2>Select a burgers</h2>
     <div class="form-group">
-      <select name="id">
+      <select name="select">
         {{#each burgers}}
-        <option data-id="{{this.id}}" data-name="{{this.burger_name}}">{{this.burger_name}}</option>
+        <option data-id="{{this.id}}" value="{{this.burger_name}}">{{this.burger_name}}</option>
         {{/each}}
       </select>
     </div>

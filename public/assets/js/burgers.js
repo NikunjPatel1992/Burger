@@ -61,24 +61,22 @@ $(function () {
   $(".select-form").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-
-    console.log($(this).data("name"));
-    console.log($(this).data("id"));
-    // var newBurger = {
-    //   name: $("#burgername").val().trim()
-    //   // devoured: $("[name=devoured]:checked").val().trim()     
-    // };
-    // // Send the POST request.
-    // $.ajax("/api/burgers", {
-    //   type: "POST",
-    //   data: newBurger
-    // }).then(
-    //   function () {
-    //     console.log("created new Burger");
-    //     // Reload the page to get the updated list
-    //     location.reload();
-    //   }
-    // );
+    
+    var selectBurger = {
+      name: $("select").val()
+      
+    };
+    // Send the POST request.
+    $.ajax("/api/burgers", {
+      type: "POST",
+      data: selectBurger
+    }).then(
+      function () {
+        console.log("select burger created");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
   });
 
 
