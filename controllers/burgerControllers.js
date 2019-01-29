@@ -16,20 +16,20 @@ router.get("/", function (req, res) {
   });
 });
 
-router.get("/:id",function(req, res){
+router.get("/api/burgers/:id", function (req, res) {
   console.log(req.params.id);
-  // var condition = "id = " + req.params.id;  
-    var condition =  req.params.id;  
+  var condition = "id = " + req.params.id;
+  // var condition =  req.params.id;  
 
   burger.updateburger(
-    condition,    
+    condition,
     function (data) {
-    var hbsObject = {
-      burgers: data
-    };
-    console.log(hbsObject);
-    res.render("update_burger", hbsObject);
-  });
+      var hbsObject = {
+        burgers: data
+      };
+      console.log(hbsObject);
+      res.render("update_burger", hbsObject);
+    });
 });
 
 router.post("/api/burgers", function (req, res) {
