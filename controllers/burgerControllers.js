@@ -18,7 +18,9 @@ router.get("/", function (req, res) {
 
 router.get("/:id",function(req, res){
   console.log(req.params.id);
-  var condition = "id = " + req.params.id;  
+  // var condition = "id = " + req.params.id;  
+    var condition =  req.params.id;  
+
   burger.updateburger(
     condition,    
     function (data) {
